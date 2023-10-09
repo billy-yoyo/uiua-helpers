@@ -5,7 +5,7 @@ These are a set of helper functions for Uiua. I'll be adding to these and improv
 
 Here's some brief documentation about some of the modules;
 
-## `obj.ua`
+## Module: `obj.ua`
 
 This is a file which helps defining and manipulating key/value objects. Basic usage is as follows:
 
@@ -49,7 +49,7 @@ This returns an array of boxed keys within `Object`
 
 This returns an array of boxed values within `Object` (this will have the same ordering as `ObjectKeys`)
 
-## `json_parse.ua`
+## Module: `json_parse.ua`
 
 This exports a single method `ParseJson` which accepts a single string and returns the decoded json value at the start of the string (ignoring any extra), or an error if it fails to decode a valid json value.
 
@@ -57,14 +57,14 @@ This exports a single method `ParseJson` which accepts a single string and retur
 
 The parser will convert json types to the following uiua structures:
 
-    1. `number` gets converted to numbers
-    2. `boolean`` gets converted to boxed boolean number (i.e. `(1)` for `true` and `(0)` for `false`). This is so when writing the json we know to convert them back to booleans rather than numbers
-    3. `string` gets converted to character arrays
-    4. `null` gets converted to a double-boxed 0 (i.e. `((0))`)
-    5. `array` gets converted to a boxed array of decoded values
-    6. `object` gets converted to an object as defined in `obj.ua`
+1. `number` gets converted to numbers
+2. `boolean`` gets converted to boxed boolean number (i.e. `(1)` for `true` and `(0)` for `false`). This is so when writing the json we know to convert them back to booleans rather than numbers
+3. `string` gets converted to character arrays
+4. `null` gets converted to a double-boxed 0 (i.e. `((0))`)
+5. `array` gets converted to a boxed array of decoded values
+6. `object` gets converted to an object as defined in `obj.ua`
 
-## `json-writer.ua`
+## Module: `json-writer.ua`
 
 This exports a single method `WriteJson` which accepts a json value (listed as one of the returned structures above) and converts it into a json string.
 
